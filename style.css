@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f7f4 0%, #b2ebf2 50%, #e8f5e9 100%);
+  font-family: 'Nunito', sans-serif;
+  padding: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 150, 136, 0.15);
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.card-header .icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.card-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00796b;
+}
+
+/* Grupos de campo */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group > label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #37474f;
+  margin-bottom: 10px;
+}
+
+/* Input numérico */
+input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #b2dfdb;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  color: #263238;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+  border-color: #00bcd4;
+}
+
+input[type="number"]::placeholder {
+  color: #b0bec5;
+}
+
+/* Rádios customizados */
+.radio-group {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #455a64;
+  user-select: none;
+}
+
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b2dfdb;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.radio-custom::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #00bcd4;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+  border-color: #00bcd4;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Checkboxes customizados */
+.checkbox-group {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #455a64;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b2dfdb;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.checkbox-custom::after {
+  content: '✓';
+  font-size: 13px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+  background: #00bcd4;
+  border-color: #00bcd4;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+  opacity: 1;
+}
+
+/* Botões */
+.btn-group {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#btnCalcular {
+  background: #00bcd4;
+  color: #fff;
+}
+
+#btnCalcular:hover {
+  background: #0097a7;
+}
+
+#btnCalcular:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  background: #e0f2f1;
+  color: #00796b;
+}
+
+.btn-secondary:hover {
+  background: #b2dfdb;
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Resultado */
+.resultado {
+  background: #f0fdfc;
+  border: 2px solid #b2dfdb;
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: flex;
+  gap: 18px;
+}
+
+.resultado-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resultado-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #607d8b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resultado-valor {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #00796b;
+}
+
+/* Erro */
+.erro {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e53935;
+  min-height: 20px;
+}

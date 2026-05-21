@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Refresco</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="icon">🍹</span>
+      <h1>Banca de Suco</h1>
+    </div>
+
+    <div class="form-group">
+      <label for="litros">Quantos litros de refresco deseja fazer?</label>
+      <input type="number" id="litros" min="0.1" step="0.1" placeholder="Ex: 2" />
+    </div>
+
+    <div class="form-group">
+      <label>Escolha o tipo de suco:</label>
+      <div class="radio-group">
+        <label class="radio-label">
+          <input type="radio" name="suco" value="maracuja" />
+          <span class="radio-custom"></span>
+          Maracujá
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="suco" value="caju" />
+          <span class="radio-custom"></span>
+          Caju
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="suco" value="goiaba" />
+          <span class="radio-custom"></span>
+          Goiaba
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Itens extras a utilizar:</label>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="acucar" />
+          <span class="checkbox-custom"></span>
+          Açúcar
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="gelo" />
+          <span class="checkbox-custom"></span>
+          Gelo
+        </label>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button id="btnCalcular" onclick="calcular()">Calcular</button>
+      <button id="btnNovo" class="btn-secondary" onclick="novo()">Novo</button>
+    </div>
+
+    <div class="resultado" id="resultado">
+      <div class="resultado-item">
+        <span class="resultado-label">💧 Água:</span>
+        <span class="resultado-valor" id="agua">—</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">🍊 Suco:</span>
+        <span class="resultado-valor" id="suco">—</span>
+      </div>
+    </div>
+
+    <div class="erro" id="erro"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
